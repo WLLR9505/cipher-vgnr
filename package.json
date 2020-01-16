@@ -1,0 +1,25 @@
+{
+  "name": "ciphervgnr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "test": "node ./index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WLLR9505/cipher-vgnr.git"
+  },
+  "keywords": [
+    "vigenere"
+  ],
+  "author": "Weuller Jr. Souza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WLLR9505/cipher-vgnr/issues"
+  },
+  "homepage": "https://github.com/WLLR9505/cipher-vgnr#readme"
+}
