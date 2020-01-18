@@ -6,7 +6,7 @@ Vigenere Cipher in node
 ```js
 const Encrypt = require('ciphervgnr');
 
-let text = 'KESTREL IS UNDER atack';
+let text = 'KESTREL IS UNDER attack';
 let key = 'WARDOG';
 
 //Encrypt
