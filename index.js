@@ -1,4 +1,8 @@
-function CharCode (c) {
+function insert(array, index, item) {
+    return array.splice(index, 0, item);
+}
+
+function CharCode(c) {
     //Transforma o código ASCII do caracter em código do alfabeto (0~25)
     let code = c.charCodeAt(0) - 65;
     if (code >= 0 && code < 26) { //ignora caractéres diferentes de letras maiúsculas
@@ -13,7 +17,15 @@ function Decode (c) {
 }
 
 function Encrypt (text, key, decrypt = false) {
-    text = text.replace(/\s/g, '');    //remove todos os espaços em branco
+    text = text.split(''); //cria um array com o texto para procurar espaços
+    spaces = text.map((t, index) => {
+        if (t == ' ') { return index }
+    }).filter((t, index) => {
+        if (t) { return t }
+    }); //mapeia e constroi um novo array com o número e a posição de espaços
+
+    text = text.join(''); //recupera o texto original
+    text = text.replace(/\s/g, ''); //remove os espaços
     text = text.toUpperCase();
     key = key.toUpperCase();
 
@@ -36,6 +48,11 @@ function Encrypt (text, key, decrypt = false) {
         CODE += Decode(c);
         kp++;
     }
+    CODE = CODE.split('');
+    spaces.forEach(s => {
+        insert(CODE, s, ' ');
+    });
+    CODE = CODE.join('');
     return CODE;
 }
 
