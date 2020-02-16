@@ -6,12 +6,12 @@ Vigenere Cipher in node
 ```js
 const Encrypt = require('ciphervgnr');
 
-let text = 'KESTREL IS UNDER ATTACK';
-let key = 'WARDOG';
+let text = 'Kestrel Is Under Attack';
+let key = 'Wardog';
 
 //Encrypt
-let code = Encrypt(text, key);  //output: GEJWFKH IJ XBJAR RWHGYK
+let code = Encrypt(text, key);  //output: Gejwfkh Ij Xbjar Rwhgyk
 
 //Decrypt
-Encrypt(code, key, true); //output: KESTREL IS UNDER ATTACK
+Encrypt(code, key, true); //output: Kestrel Is Under Attack
 ```

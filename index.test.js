@@ -1,11 +1,11 @@
 var Encrypt = require('./index.js');
 
 function test() {
-    let text = 'KESTREL IS UNDER ATTACK';
-    let key = 'WARDOG';
+    let text = 'Kestrel Is Under Attack';
+    let key = 'Wardog';
 
-    console.log('criptografado: ' + Encrypt(text, key)); //output: GEJWFKH IJ XBJAR RWHGYK
-    console.log('descriptografado: ' + Encrypt(Encrypt(text, key), key, true)); //output: KESTREL IS UNDER ATTACK
+    console.log('criptografado: ' + Encrypt(text, key)); //output: Gejwfkh Ij Xbjar Rwhgyk
+    console.log('descriptografado: ' + Encrypt(Encrypt(text, key), key, true)); //output: Kestrel Is Under Attack
 }
 
 test();

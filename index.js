@@ -18,11 +18,15 @@ function Decode (c) {
 
 function Encrypt (text, key, decrypt = false) {
     text = text.split(''); //cria um array com o texto para procurar espaços
-    spaces = text.map((t, index) => {
+    let spaces = text.map((t, index) => {
         if (t == ' ') { return index }
     }).filter((t, index) => {
         if (t) { return t }
     }); //mapeia e constroi um novo array com o número e a posição de espaços
+
+    let UpperAndLower = text.map((t, i) => {
+        return t.charCodeAt(0) <= 90 ? true : false; //  MAIUSCULAS / minusculas
+    })
 
     text = text.join(''); //recupera o texto original
     text = text.replace(/\s/g, ''); //remove os espaços
@@ -50,8 +54,11 @@ function Encrypt (text, key, decrypt = false) {
     }
     CODE = CODE.split('');
     spaces.forEach(s => {
-        insert(CODE, s, ' ');
+        insert(CODE, s, ' '); //insere espaços nos pontos marcados
     });
+    CODE = CODE.map((t, i) => {
+        return UpperAndLower[i] == false ? t.toLowerCase() : t.toUpperCase(); //converte para maiusculas e minusculas
+    })
     CODE = CODE.join('');
     return CODE;
 }
